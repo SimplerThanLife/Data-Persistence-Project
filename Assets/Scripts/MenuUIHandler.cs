@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor.Build;
 using TMPro;
+using JetBrains.Annotations;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -16,9 +18,9 @@ public class MenuUIHandler : MonoBehaviour
 {
     public TMP_InputField NameInputField;
 
-    public void NewNameInputted(string name)
+    public void SavePlayerName()
     {
-        MainManager.Instance.playerName = name;
+       GameData.PlayerName = NameInputField.text;
 
     }
     // Start is called before the first frame update
